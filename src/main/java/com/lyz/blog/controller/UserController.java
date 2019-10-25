@@ -68,7 +68,7 @@ public class UserController {
     /**
      * 获取 form 表单页面
      *
-     * @param user
+     * @param model
      * @return
      */
     @GetMapping("/add")
@@ -81,8 +81,7 @@ public class UserController {
      * 新建用户
      *
      * @param user
-     * @param result
-     * @param redirect
+     * @param authorityId
      * @return
      */
     @PostMapping
@@ -134,8 +133,8 @@ public class UserController {
 
     /**
      * 获取修改用户的界面，及数据
-     *
-     * @param user
+     * @param id
+     * @param model
      * @return
      */
     @GetMapping(value = "edit/{id}")
