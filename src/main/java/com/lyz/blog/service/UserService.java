@@ -11,9 +11,6 @@ import java.util.List;
 
 /**
  * User 服务接口.
- *
- * @author <a href="https://waylau.com">Way Lau</a>
- * @since 1.0.0 2017年3月18日
  */
 public interface UserService {
     /**
@@ -26,17 +23,13 @@ public interface UserService {
 
     /**
      * 删除用户
-     *
-     * @param user
-     * @return
+     * @param id
      */
     void removeUser(Long id);
 
     /**
      * 删除列表里面的用户
-     *
-     * @param user
-     * @return
+     * @param users
      */
     void removeUsersInBatch(List<User> users);
 
@@ -50,8 +43,7 @@ public interface UserService {
 
     /**
      * 根据id获取用户
-     *
-     * @param user
+     * @param id
      * @return
      */
     User getUserById(Long id);

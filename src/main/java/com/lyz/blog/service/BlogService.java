@@ -44,8 +44,9 @@ public interface BlogService {
 
     /**
      * 根据用户名进行分页模糊查询（最热）
-     *
-     * @param user
+     * @param suser
+     * @param title
+     * @param pageable
      * @return
      */
     Page<Blog> listBlogsByTitleVoteAndSort(User suser, String title, Pageable pageable);

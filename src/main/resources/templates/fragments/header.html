@@ -75,7 +75,7 @@
             </ul>
             <div sec:authorize="isAuthenticated()" class="row">
                 <div class="dropdown">
-                    <a class=" dropdown-toggle" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}"
+                    <a class=" dropdown-toggle btn btn-default" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}"
                        data-toggle="dropdown"><span sec:authentication="name"></span></a>
                     <div class="dropdown-menu">
                         <a class=" dropdown-item" href="/u/waylau" th:href="@{'/u/' + ${#authentication.name}}">个人主页</a>

@@ -21,6 +21,8 @@ import org.elasticsearch.search.aggregations.bucket.terms.StringTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms.Bucket;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -57,6 +59,8 @@ public class EsBlogServiceImpl implements EsBlogService {
     }
 
     @Override
+//    @CachePut(cacheNames = "blog", key = "123")
+//    @CacheEvict(cacheNames = "product", key = "123") redis缓存
     public EsBlog updateEsBlog(EsBlog esBlog) {
         return esBlogRepository.save(esBlog);
     }
@@ -67,6 +71,7 @@ public class EsBlogServiceImpl implements EsBlogService {
     }
 
     @Override
+//    @Cacheable(cacheNames = "blog", key = "123") // redis缓存 打开即用
     public Page<EsBlog> listNewestEsBlogs(String keyword, Pageable pageable) throws SearchParseException {
         Page<EsBlog> pages = null;
         Sort sort = new Sort(Direction.DESC, "createTime");
