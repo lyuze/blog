@@ -18,10 +18,8 @@ $(function () {
         },
         resize: 'vertical',
         localStorage: 'md',
-        imgurl: 'http://localhost:80',
-        // imgurl: 'http://localhost:8081',
-        // base64url: 'http://localhost:8081'
-        base64url: 'http://localhost:80'
+        imgurl: 'http://localhost:8081',
+        base64url: 'http://localhost:8081'
     });
 
 
@@ -37,8 +35,7 @@ $(function () {
 
     $("#uploadImage").click(function () {
         $.ajax({
-            url: 'http://localhost:80/upload',
-            // url: 'http://localhost:8081/upload',
+            url: 'http://localhost:8081/upload',
             type: 'POST',
             cache: false,
             data: new FormData($('#uploadformid')[0]),
